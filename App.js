@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import { Text, View, TouchableHighlight } from "react-native";
+import styles from "./components/styles";
+import Buttons from "./components/Buttons";
+import Operators from "./components/Operators";
 
-export default function App() {
+const App = () => {
+  const [firstNumber, setFirstNumber] = useState(0);
+  const [secondNumber, setSecondNumber] = useState(0);
+  const [operator, setOperator] = useState("");
+  const [strCalculation, setStrCalculation] = useState("0");
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={{ marginTop: 37, flex: 1, justifyContent: "center" }}>
       <StatusBar style="auto" />
+
+      <View style={styles.topView}>
+        <Text style={styles.txtTop}>{strCalculation}</Text>
+      </View>
+      <View>
+        <Operators />
+      </View>
+      <View>
+        <Buttons />
+      </View>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
