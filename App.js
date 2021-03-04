@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { Text, View, TouchableHighlight } from "react-native";
 import styles from "./components/styles";
 import Buttons from "./components/Buttons";
-import Operators from "./components/Operators";
 
-const App = () => {
+const App = (props) => {
   const [firstNumber, setFirstNumber] = useState(0);
   const [secondNumber, setSecondNumber] = useState(0);
   const [operator, setOperator] = useState("");
@@ -19,10 +18,16 @@ const App = () => {
         <Text style={styles.txtTop}>{strCalculation}</Text>
       </View>
       <View>
-        <Operators />
-      </View>
-      <View>
-        <Buttons />
+        <Buttons
+          setFirstNumber={setFirstNumber}
+          firstNumber={firstNumber}
+          strCalculation={strCalculation}
+          setStrCalculation={setStrCalculation}
+          setOperator={setOperator}
+          operator={operator}
+          secondNumber={secondNumber}
+          setSecondNumber={setSecondNumber}
+        />
       </View>
     </View>
   );

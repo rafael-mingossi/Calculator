@@ -16,9 +16,6 @@ const styles = StyleSheet.create({
     textAlign: "right",
     fontWeight: "bold",
   },
-  operatorView: {
-    flexDirection: "row",
-  },
   operatorBtnTxt: {
     fontSize: 24,
     textAlign: "center",
@@ -49,6 +46,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#9e9b9b",
     borderWidth: 2,
     borderColor: "white",
+  },
+  buttonsBtnClear: {
+    width: "100%",
+    textAlign: "center",
+    backgroundColor: "#9e9b9b",
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderColor: "black",
   },
 });
 export default styles;
